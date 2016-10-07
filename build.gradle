@@ -1,14 +1,16 @@
-configurations.all {
-    resolutionStrategy.dependencySubstitution {
-        substitute.module("com.roku.gradle:terraform") with project(":plugin"), changing: true
-    }
-}
+project.ext.artifactoryHost = 'artifactory.cs.roku.com:8081'
+
 buildscript {
     repositories {
-        mavenLocal()
+        maven {
+           url "http://${project.artifactoryHost}/artifactory/libs-release-local"
+        }
+        maven {
+           url "http://${project.artifactoryHost}/artifactory/libs-snapshot-local"
+        }
     }
     dependencies {
-        classpath "com.roku.gradle:terraform:"+project(":plugin").version
+        classpath "com.roku.gradle:terraform:0.9.6"
     }
 }
 

@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        mavenCentral()
         maven {
            url "http://artifactory.cs.roku.com:8081/artifactory/libs-release-local"
         }

@@ -1,12 +1,10 @@
-project.artifactoryHost = 'artifactory.cs.roku.com:8081'
-
 buildscript {
     repositories {
         maven {
-           url "http://${project.artifactoryHost}/artifactory/libs-release-local"
+           url "http://artifactory.cs.roku.com:8081/artifactory/libs-release-local"
         }
         maven {
-           url "http://${project.artifactoryHost}/artifactory/libs-snapshot-local"
+           url "http://artifactory.cs.roku.com:8081/artifactory/libs-snapshot-local"
         }
     }
     dependencies {

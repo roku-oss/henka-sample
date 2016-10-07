@@ -1,4 +1,4 @@
-project.ext.artifactoryHost = 'artifactory.cs.roku.com:8081'
+project.artifactoryHost = 'artifactory.cs.roku.com:8081'
 
 buildscript {
     repositories {

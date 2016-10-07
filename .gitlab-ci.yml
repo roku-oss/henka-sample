@@ -1,0 +1,14 @@
+stages:
+  - build
+
+before_script:
+  - chmod +x gradlew
+
+build:
+  stage: build
+  tags:
+    - java
+    - gradle
+    - terraform
+  script:
+    - ./gradlew terraform -P tfAwsAccessKey="$AWS_ACCESS_KEY" -P tfAwsSecretKey="$AWS_SECRET_KEY" -P tfConfS3KmsKey=arn:aws:kms:us-east-1:500681607159:key/b0346a62-113f-4a0a-8b86-28707f853ac0

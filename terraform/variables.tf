@@ -17,5 +17,4 @@ variable "aws_region" {
 
 variable "s3_bucket" {
   description = "S3 Bucket for testing terraform plugin"
-  default = "terraform-plugin-test-bucket"
 }

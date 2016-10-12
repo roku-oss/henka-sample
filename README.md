@@ -17,7 +17,6 @@ To run the sample project:
 * you need to define two environment variables to be used by Terraform:
   * TF_VAR_aws_access_key - AWS access key for Terraform AWS provider
   * TF_VAR_aws_secret_key - AWS secret key for Terraform AWS provider
-  * TF_VAR_aws_account_id - AWS account ID for Terraform AWS provider
 * You need to create a KMS key and obtain its ARN
 
 The command is

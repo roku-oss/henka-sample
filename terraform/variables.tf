@@ -6,10 +6,6 @@ variable "aws_secret_key" {
   description = "AWS secret key of Terraform deployment user."
 }
 
-variable "aws_account_id" {
-  description = "AWS service account ID"
-}
-
 variable "aws_region" {
   description = "AWS region to launch servers."
   default = "us-east-1"

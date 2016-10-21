@@ -1,8 +1,8 @@
-# Terraform Gradle Plugin Sample Project
+# Henka Sample Project
 
 ## What is it?
 
-This project provides an example for Terraform Gradle Plugin (provide link here).
+This project provides an example for Henka (provide link here).
 
 It provides a terraform script to plan creatiion of a single S3 bucket. The plugin takes the terraform script,
 pulls or initializes the remote state and performs "terraform plan command".
@@ -30,4 +30,11 @@ Feel free to change it or to override it by providing the environment value `TF_
 
 ## Licensing
 
-Gradle Terraform Plugin Sample Project is available as open source under the terms of [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.txt) 
+Henka Sample Project is available as open source under the terms of [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.txt) 
+
+## Contributing
+
+When submitting a PR, please fill in and submit an appropriate Software Grant & Contributor License Agreement:
+* [Individual Contributor License Agreement](Roku ICLA.txt)
+* or [Software Grant and Corporate Contributor License Agreement](Roku CCLA.txt)
+

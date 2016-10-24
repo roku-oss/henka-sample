@@ -2,10 +2,10 @@
 
 ## What is it?
 
-This project provides an example for Henka (provide link here).
+This project provides an example for [Henka](https://github.com/rokudev/henka/).
 
 It provides a terraform script to plan creatiion of a single S3 bucket. The plugin takes the terraform script,
-pulls or initializes the remote state and performs "terraform plan command".
+pulls or initializes a remote state and performs "terraform plan command".
 
 To change its behaviour, please edit `terraform` task properties in `build.gradle`
 

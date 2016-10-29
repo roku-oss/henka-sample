@@ -16,15 +16,9 @@
 buildscript {
     repositories {
         mavenCentral()
-        maven {
-           url "http://artifactory.cs.roku.com:8081/artifactory/libs-release-local"
-        }
-        maven {
-           url "http://artifactory.cs.roku.com:8081/artifactory/libs-snapshot-local"
-        }
     }
     dependencies {
-        classpath "com.roku:henka:0.9.6"
+        classpath "com.roku:henka:0.9.7"
     }
 }
 

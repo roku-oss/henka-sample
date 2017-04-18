@@ -4,15 +4,14 @@
 
 This project provides an example for [Henka](https://github.com/rokudev/henka/).
 
-It provides a terraform script to plan creatiion of a single S3 bucket. The plugin takes the terraform script,
-pulls or initializes a remote state and performs "terraform plan command".
+It provides a terraform script to plan creatiion of a single S3 bucket. The plugin installs Terraform, takes the terraform script,
+initializes a remote backend and performs "terraform plan" command.
 
 To change its behaviour, please edit `terraform` task properties in `build.gradle`
 
 ## How do I run it?
 
 To run the sample project:
-* terraform has to be installed and available in PATH
 * AWS access should be configured either through environment variables, default profile credentials or IAM profile
 * you need to define two environment variables to be used by Terraform:
   * TF_VAR_aws_access_key - AWS access key for Terraform AWS provider
@@ -21,7 +20,7 @@ To run the sample project:
 
 The command is
 ```
-./gradlew terraform -P tfConfS3KmsKey=<your KMS key ARN> -P tfConfS3Bucket=<your TF conf S3 bucket name> 
+./gradlew terraform -P  tfInitParams="-input=false -backend-config=<your_S3_bucket> -backend-config=key=<your_S3_key> -backend-config=kms_key_id=<your_KMS_key_ARN> -force-copy"
 ```
 
 The S3 bucket name is defined in `sample_terraform_vars/test.vars`

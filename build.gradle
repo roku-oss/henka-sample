@@ -15,18 +15,37 @@
 
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
+        maven {url 'https://oss.jfrog.org/oss-snapshot-local/'}
     }
     dependencies {
-        classpath "com.roku:henka:0.9.7"
+        classpath "com.roku:henka:1.0.0-SNAPSHOT"
     }
 }
 
 task terraform(type: com.roku.henka.TerraformTask) {
     description "Runs a terraform script"
     tfDir = "$projectDir/terraform"
+    tfInitParams = "-input=false -backend-config=bucket=roku-terraform-state-e1qa -backend-config=key=e1qa-henka-sample.tfstate -backend-config=kms_key_id=alias/e1qa-secrets -force-copy"
+
+    installTerraform = true
+    if (org.gradle.internal.os.OperatingSystem.current().isWindows()) {
+      terraformBaseDir = "c:/opt/terraform"
+    } else {
+      terraformBaseDir = "/opt/terraform"
+    }
+    terraformVersion = "0.9.2"
+}
+
+/*
+task preinstalledTerraform(type: com.roku.henka.TerraformTask) {
+    description "Runs a terraform script"
+    tfDir = "$projectDir/terraform"
     tfVarFile = "$projectDir/sample_terraform_vars/test.vars"
     tfAction = "plan"
 
     tfConfS3Key = "test.tfstate"
+
+    installTerraform = false
 }
+*/
